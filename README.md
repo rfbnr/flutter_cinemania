@@ -4,10 +4,10 @@ Cinemania adalah sebuah aplikasi mobile yang menyediakan informasi tentang Movie
 
 ## Fitur utama Cinemania:
 
-- Penjelajahan Film dan TVShow: Akses daftar lengkap film dan acara TV, jelajahi berdasarkan popularitas, atau kategori lainnya.
-- Detail Informasi: Dapatkan informasi lengkap tentang film atau acara TV tertentu.
-- Watchlist: Tambahkan film atau acara TV favorit Anda ke dalam daftar pantauan.
-- Pencarian: Cari film atau acara TV berdasarkan judul atau kata kunci tertentu.
+- Penjelajahan Movie dan TVShow: Akses daftar Movie dan TV Show, jelajahi berdasarkan popularitas, atau kategori lainnya.
+- Detail Informasi: Dapatkan informasi tentang Movie atau Tv Show tertentu.
+- Watchlist: Tambahkan Movie atau TV Show favorit Anda ke dalam daftar pantauan atau watchlist.
+- Pencarian: Cari Movie atau TV Show berdasarkan judul atau kata kunci tertentu.
 
 ## Panduan Instalasi dan Menjalankan Cinemania
 
@@ -29,8 +29,20 @@ Buka terminal di direktori Cinemania dan jalankan perintah berikut untuk mengins
 flutter pub get
 ```
 
-## Langkah 3: Menjalankan Aplikasi
-Setelah menginstal dependensi, jalankan aplikasi Cinemania dengan perintah:
+## Langkah 3: Masukkan API key TMDB
+Anda dapat mendaftar untuk mendapatkan keys API 
+https://developers.themoviedb.org/3/getting-started/introduction
+```
+ubah API key TMDB di file variables.dart
+
+-lib/
+--core/
+---constants/
+----variables.dart
+```
+
+## Langkah 4: Menjalankan Aplikasi
+Setelah menginstal dependensi dan memasukkan API key TMDB, selanjutnya jalankan aplikasi Cinemania dengan perintah:
 ```
 flutter run
 ```
@@ -38,6 +50,7 @@ flutter run
 Catatan: Pastikan Anda memiliki koneksi internet saat pertama kali menjalankan aplikasi untuk mengunduh data yang diperlukan.
 
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Untuk bantuan memulai pengembangan dengan Flutter, lihat
+[dokumentasi online](https://docs.flutter.dev/), yang dapat melihat tutorial,
+sample, panduan pengembangan mobile, dan referensi API lengkap.
+
