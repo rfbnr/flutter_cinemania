@@ -18,12 +18,10 @@ class _SplashPageState extends State<SplashPage> {
     super.initState();
 
     Timer(const Duration(seconds: 4), () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) {
-          return const DashboardPage();
-        }),
-      );
+      Navigator.pushAndRemoveUntil(context,
+          MaterialPageRoute(builder: (context) {
+        return const DashboardPage();
+      }), (route) => false);
     });
   }
 
