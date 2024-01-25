@@ -20,7 +20,7 @@ Sebelum menginstal Cinemania, pastikan sistem Anda memenuhi persyaratan berikut:
 ## Langkah 1 Mendownload Kode Sumber
 Clone repositori Cinemania dari GitHub ke sistem Anda:
 ```
-git clone https://github.com/username/cinemania.git
+git clone https://github.com/ridwanfbnr/flutter_cinemania.git
 ```
 
 ## Langkah 2: Instalasi Dependensi
