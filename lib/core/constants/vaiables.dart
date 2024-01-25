@@ -1,5 +1,6 @@
 class Variables {
-  static const String apiKey = "0b29459e228bc3ab530b370771966743";
+  static const String apiKey =
+      "untuk mendapatkan keys API TMDB https://developers.themoviedb.org/3/getting-started/introduction";
 
   static const String imageBaseUrl = "https://image.tmdb.org/t/p/original";
 

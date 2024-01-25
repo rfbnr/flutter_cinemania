@@ -58,6 +58,17 @@ class _MoviePageState extends State<MoviePage> {
                             child: CircularProgressIndicator(),
                           );
                         },
+                        error: (message) {
+                          return Center(
+                            child: Text(
+                              message,
+                              style: const TextStyle(
+                                color: AppColors.white,
+                                fontSize: 18,
+                              ),
+                            ),
+                          );
+                        },
                         success: (result) {
                           return ListView.builder(
                             shrinkWrap: true,
@@ -94,6 +105,18 @@ class _MoviePageState extends State<MoviePage> {
                         loading: () {
                           return const Center(
                             child: CircularProgressIndicator(),
+                          );
+                        },
+                        error: (message) {
+                          return Center(
+                            heightFactor: 5,
+                            child: Text(
+                              message,
+                              style: const TextStyle(
+                                color: AppColors.white,
+                                fontSize: 18,
+                              ),
+                            ),
                           );
                         },
                         success: (result) {

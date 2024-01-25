@@ -47,6 +47,18 @@ class _PeoplePageState extends State<PeoplePage> {
                         child: CircularProgressIndicator(),
                       );
                     },
+                    error: (message) {
+                      return Center(
+                        heightFactor: 5,
+                        child: Text(
+                          message,
+                          style: const TextStyle(
+                            color: AppColors.white,
+                            fontSize: 18,
+                          ),
+                        ),
+                      );
+                    },
                     success: (result) {
                       return ListView.builder(
                         shrinkWrap: true,
