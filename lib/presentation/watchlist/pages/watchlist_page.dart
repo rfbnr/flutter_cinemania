@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/constants/colors.dart';
+import '../../../data/datasources/watchlist_local_datasource.dart';
 import '../bloc/watchlist_bloc.dart';
 import '../widgets/watchlist_card.dart';
 
@@ -17,6 +18,83 @@ class _WatchListPageState extends State<WatchListPage> {
   void initState() {
     super.initState();
     context.read<WatchlistBloc>().add(const WatchlistEvent.getAllWatchlist());
+  }
+
+  Future<void> _deleteAllWatchlist() async {
+    final watchlist = await WatchlistLocalDatasource.instance.getAllWatchlist();
+
+    if (watchlist.isEmpty) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text(
+            "Tidak ada daftar watchlist",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          backgroundColor: AppColors.red,
+        ),
+      );
+    } else {
+      _showDialogDelete();
+    }
+  }
+
+  Future<void> _showDialogDelete() {
+    return showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: AppColors.black,
+          title: const Text(
+            "Watchlist",
+            style: TextStyle(color: AppColors.white),
+          ),
+          content: const Text(
+            "Yakin ingin menghapus semua daftar watchlist?",
+            style: TextStyle(
+              fontSize: 16,
+              color: AppColors.white,
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, "Tidak"),
+              child: const Text(
+                "Tidak",
+                style: TextStyle(color: AppColors.white),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                context
+                    .read<WatchlistBloc>()
+                    .add(const WatchlistEvent.clearWatchlist());
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text(
+                      "Berhasil menghapus semua watchlist",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    backgroundColor: AppColors.green,
+                  ),
+                );
+
+                Navigator.pop(context, "Hapus");
+              },
+              child: const Text(
+                "Hapus",
+                style: TextStyle(color: AppColors.white),
+              ),
+            ),
+          ],
+        );
+      },
+    );
   }
 
   @override
@@ -45,11 +123,7 @@ class _WatchListPageState extends State<WatchListPage> {
                       size: 30,
                       color: AppColors.red,
                     ),
-                    onPressed: () {
-                      context
-                          .read<WatchlistBloc>()
-                          .add(const WatchlistEvent.clearWatchlist());
-                    },
+                    onPressed: () => _deleteAllWatchlist(),
                   )
                 ],
               ),
@@ -69,7 +143,7 @@ class _WatchListPageState extends State<WatchListPage> {
                       if (result.isEmpty) {
                         return const Center(
                           child: Text(
-                            "Belum ada daftar watchlist",
+                            "Tidak ada daftar watchlist",
                             style: TextStyle(
                               color: AppColors.white,
                               fontSize: 18,

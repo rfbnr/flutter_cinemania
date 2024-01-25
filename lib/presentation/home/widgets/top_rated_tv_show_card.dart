@@ -5,6 +5,7 @@ import '../../../core/components/spaces.dart';
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/vaiables.dart';
 import '../../../data/models/tv_show_response_model.dart';
+import '../../detail/pages/detail_tv_show_page.dart';
 
 class TopRatedTvShowCard extends StatelessWidget {
   const TopRatedTvShowCard({super.key, required this.data});
@@ -14,7 +15,14 @@ class TopRatedTvShowCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) {
+            return DetailTvShowPage(data: data);
+          }),
+        );
+      },
       child: Container(
         width: 200,
         height: 323,

@@ -47,6 +47,7 @@ class Result {
   final String name;
   final double voteAverage;
   final int voteCount;
+  final int isWatchlist;
 
   Result({
     required this.adult,
@@ -60,6 +61,7 @@ class Result {
     required this.name,
     required this.voteAverage,
     required this.voteCount,
+    this.isWatchlist = 0,
   });
 
   factory Result.fromJson(String str) => Result.fromMap(json.decode(str));
@@ -78,6 +80,7 @@ class Result {
         name: json["name"],
         voteAverage: json["vote_average"]?.toDouble(),
         voteCount: json["vote_count"],
+        isWatchlist: json["is_watchlist"] ?? 0,
       );
 
   Map<String, dynamic> toMap() => {
@@ -93,5 +96,6 @@ class Result {
         "name": name,
         "vote_average": voteAverage,
         "vote_count": voteCount,
+        "is_watchlist": isWatchlist,
       };
 }

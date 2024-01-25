@@ -5,7 +5,7 @@ import '../../../core/components/spaces.dart';
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/vaiables.dart';
 import '../../../data/models/movie_response_model.dart';
-import '../../detail/pages/detail_page.dart';
+import '../../detail/pages/detail_movie_page.dart';
 
 class PopularMovieCard extends StatelessWidget {
   const PopularMovieCard({super.key, required this.data});
@@ -19,7 +19,7 @@ class PopularMovieCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(builder: (context) {
-            return DetailPage(data: data);
+            return DetailMoviePage(data: data);
           }),
         );
       },
