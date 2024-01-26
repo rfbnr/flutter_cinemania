@@ -59,4 +59,10 @@ class WatchlistLocalDatasource {
     final db = await instance.database;
     await db.delete(tableName);
   }
+
+  Future<void> removeWatchlistById(int id) async {
+    final db = await instance.database;
+
+    await db.delete(tableName, where: "id = ?", whereArgs: [id]);
+  }
 }

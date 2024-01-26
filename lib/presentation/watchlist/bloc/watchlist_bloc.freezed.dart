@@ -21,6 +21,7 @@ mixin _$WatchlistEvent {
     required TResult Function() started,
     required TResult Function() getAllWatchlist,
     required TResult Function() clearWatchlist,
+    required TResult Function(int idWatchlist) removeWatchlistById,
     required TResult Function(WatchlistResponseModel resultWatchlist)
         addToWatchlist,
   }) =>
@@ -30,6 +31,7 @@ mixin _$WatchlistEvent {
     TResult? Function()? started,
     TResult? Function()? getAllWatchlist,
     TResult? Function()? clearWatchlist,
+    TResult? Function(int idWatchlist)? removeWatchlistById,
     TResult? Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
   }) =>
       throw _privateConstructorUsedError;
@@ -38,6 +40,7 @@ mixin _$WatchlistEvent {
     TResult Function()? started,
     TResult Function()? getAllWatchlist,
     TResult Function()? clearWatchlist,
+    TResult Function(int idWatchlist)? removeWatchlistById,
     TResult Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
     required TResult orElse(),
   }) =>
@@ -47,6 +50,7 @@ mixin _$WatchlistEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_GetAllWatchlist value) getAllWatchlist,
     required TResult Function(_ClearWatchlist value) clearWatchlist,
+    required TResult Function(_RemoveWatchlistById value) removeWatchlistById,
     required TResult Function(_AddToWatchlist value) addToWatchlist,
   }) =>
       throw _privateConstructorUsedError;
@@ -55,6 +59,7 @@ mixin _$WatchlistEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult? Function(_ClearWatchlist value)? clearWatchlist,
+    TResult? Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult? Function(_AddToWatchlist value)? addToWatchlist,
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +68,7 @@ mixin _$WatchlistEvent {
     TResult Function(_Started value)? started,
     TResult Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult Function(_ClearWatchlist value)? clearWatchlist,
+    TResult Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult Function(_AddToWatchlist value)? addToWatchlist,
     required TResult orElse(),
   }) =>
@@ -128,6 +134,7 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function() getAllWatchlist,
     required TResult Function() clearWatchlist,
+    required TResult Function(int idWatchlist) removeWatchlistById,
     required TResult Function(WatchlistResponseModel resultWatchlist)
         addToWatchlist,
   }) {
@@ -140,6 +147,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function()? getAllWatchlist,
     TResult? Function()? clearWatchlist,
+    TResult? Function(int idWatchlist)? removeWatchlistById,
     TResult? Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
   }) {
     return started?.call();
@@ -151,6 +159,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function()? getAllWatchlist,
     TResult Function()? clearWatchlist,
+    TResult Function(int idWatchlist)? removeWatchlistById,
     TResult Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
     required TResult orElse(),
   }) {
@@ -166,6 +175,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_GetAllWatchlist value) getAllWatchlist,
     required TResult Function(_ClearWatchlist value) clearWatchlist,
+    required TResult Function(_RemoveWatchlistById value) removeWatchlistById,
     required TResult Function(_AddToWatchlist value) addToWatchlist,
   }) {
     return started(this);
@@ -177,6 +187,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult? Function(_ClearWatchlist value)? clearWatchlist,
+    TResult? Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult? Function(_AddToWatchlist value)? addToWatchlist,
   }) {
     return started?.call(this);
@@ -188,6 +199,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult Function(_ClearWatchlist value)? clearWatchlist,
+    TResult Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult Function(_AddToWatchlist value)? addToWatchlist,
     required TResult orElse(),
   }) {
@@ -243,6 +255,7 @@ class _$GetAllWatchlistImpl implements _GetAllWatchlist {
     required TResult Function() started,
     required TResult Function() getAllWatchlist,
     required TResult Function() clearWatchlist,
+    required TResult Function(int idWatchlist) removeWatchlistById,
     required TResult Function(WatchlistResponseModel resultWatchlist)
         addToWatchlist,
   }) {
@@ -255,6 +268,7 @@ class _$GetAllWatchlistImpl implements _GetAllWatchlist {
     TResult? Function()? started,
     TResult? Function()? getAllWatchlist,
     TResult? Function()? clearWatchlist,
+    TResult? Function(int idWatchlist)? removeWatchlistById,
     TResult? Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
   }) {
     return getAllWatchlist?.call();
@@ -266,6 +280,7 @@ class _$GetAllWatchlistImpl implements _GetAllWatchlist {
     TResult Function()? started,
     TResult Function()? getAllWatchlist,
     TResult Function()? clearWatchlist,
+    TResult Function(int idWatchlist)? removeWatchlistById,
     TResult Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
     required TResult orElse(),
   }) {
@@ -281,6 +296,7 @@ class _$GetAllWatchlistImpl implements _GetAllWatchlist {
     required TResult Function(_Started value) started,
     required TResult Function(_GetAllWatchlist value) getAllWatchlist,
     required TResult Function(_ClearWatchlist value) clearWatchlist,
+    required TResult Function(_RemoveWatchlistById value) removeWatchlistById,
     required TResult Function(_AddToWatchlist value) addToWatchlist,
   }) {
     return getAllWatchlist(this);
@@ -292,6 +308,7 @@ class _$GetAllWatchlistImpl implements _GetAllWatchlist {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult? Function(_ClearWatchlist value)? clearWatchlist,
+    TResult? Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult? Function(_AddToWatchlist value)? addToWatchlist,
   }) {
     return getAllWatchlist?.call(this);
@@ -303,6 +320,7 @@ class _$GetAllWatchlistImpl implements _GetAllWatchlist {
     TResult Function(_Started value)? started,
     TResult Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult Function(_ClearWatchlist value)? clearWatchlist,
+    TResult Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult Function(_AddToWatchlist value)? addToWatchlist,
     required TResult orElse(),
   }) {
@@ -358,6 +376,7 @@ class _$ClearWatchlistImpl implements _ClearWatchlist {
     required TResult Function() started,
     required TResult Function() getAllWatchlist,
     required TResult Function() clearWatchlist,
+    required TResult Function(int idWatchlist) removeWatchlistById,
     required TResult Function(WatchlistResponseModel resultWatchlist)
         addToWatchlist,
   }) {
@@ -370,6 +389,7 @@ class _$ClearWatchlistImpl implements _ClearWatchlist {
     TResult? Function()? started,
     TResult? Function()? getAllWatchlist,
     TResult? Function()? clearWatchlist,
+    TResult? Function(int idWatchlist)? removeWatchlistById,
     TResult? Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
   }) {
     return clearWatchlist?.call();
@@ -381,6 +401,7 @@ class _$ClearWatchlistImpl implements _ClearWatchlist {
     TResult Function()? started,
     TResult Function()? getAllWatchlist,
     TResult Function()? clearWatchlist,
+    TResult Function(int idWatchlist)? removeWatchlistById,
     TResult Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
     required TResult orElse(),
   }) {
@@ -396,6 +417,7 @@ class _$ClearWatchlistImpl implements _ClearWatchlist {
     required TResult Function(_Started value) started,
     required TResult Function(_GetAllWatchlist value) getAllWatchlist,
     required TResult Function(_ClearWatchlist value) clearWatchlist,
+    required TResult Function(_RemoveWatchlistById value) removeWatchlistById,
     required TResult Function(_AddToWatchlist value) addToWatchlist,
   }) {
     return clearWatchlist(this);
@@ -407,6 +429,7 @@ class _$ClearWatchlistImpl implements _ClearWatchlist {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult? Function(_ClearWatchlist value)? clearWatchlist,
+    TResult? Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult? Function(_AddToWatchlist value)? addToWatchlist,
   }) {
     return clearWatchlist?.call(this);
@@ -418,6 +441,7 @@ class _$ClearWatchlistImpl implements _ClearWatchlist {
     TResult Function(_Started value)? started,
     TResult Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult Function(_ClearWatchlist value)? clearWatchlist,
+    TResult Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult Function(_AddToWatchlist value)? addToWatchlist,
     required TResult orElse(),
   }) {
@@ -430,6 +454,161 @@ class _$ClearWatchlistImpl implements _ClearWatchlist {
 
 abstract class _ClearWatchlist implements WatchlistEvent {
   const factory _ClearWatchlist() = _$ClearWatchlistImpl;
+}
+
+/// @nodoc
+abstract class _$$RemoveWatchlistByIdImplCopyWith<$Res> {
+  factory _$$RemoveWatchlistByIdImplCopyWith(_$RemoveWatchlistByIdImpl value,
+          $Res Function(_$RemoveWatchlistByIdImpl) then) =
+      __$$RemoveWatchlistByIdImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({int idWatchlist});
+}
+
+/// @nodoc
+class __$$RemoveWatchlistByIdImplCopyWithImpl<$Res>
+    extends _$WatchlistEventCopyWithImpl<$Res, _$RemoveWatchlistByIdImpl>
+    implements _$$RemoveWatchlistByIdImplCopyWith<$Res> {
+  __$$RemoveWatchlistByIdImplCopyWithImpl(_$RemoveWatchlistByIdImpl _value,
+      $Res Function(_$RemoveWatchlistByIdImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? idWatchlist = null,
+  }) {
+    return _then(_$RemoveWatchlistByIdImpl(
+      null == idWatchlist
+          ? _value.idWatchlist
+          : idWatchlist // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveWatchlistByIdImpl implements _RemoveWatchlistById {
+  const _$RemoveWatchlistByIdImpl(this.idWatchlist);
+
+  @override
+  final int idWatchlist;
+
+  @override
+  String toString() {
+    return 'WatchlistEvent.removeWatchlistById(idWatchlist: $idWatchlist)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveWatchlistByIdImpl &&
+            (identical(other.idWatchlist, idWatchlist) ||
+                other.idWatchlist == idWatchlist));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, idWatchlist);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveWatchlistByIdImplCopyWith<_$RemoveWatchlistByIdImpl> get copyWith =>
+      __$$RemoveWatchlistByIdImplCopyWithImpl<_$RemoveWatchlistByIdImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function() getAllWatchlist,
+    required TResult Function() clearWatchlist,
+    required TResult Function(int idWatchlist) removeWatchlistById,
+    required TResult Function(WatchlistResponseModel resultWatchlist)
+        addToWatchlist,
+  }) {
+    return removeWatchlistById(idWatchlist);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function()? getAllWatchlist,
+    TResult? Function()? clearWatchlist,
+    TResult? Function(int idWatchlist)? removeWatchlistById,
+    TResult? Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
+  }) {
+    return removeWatchlistById?.call(idWatchlist);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function()? getAllWatchlist,
+    TResult Function()? clearWatchlist,
+    TResult Function(int idWatchlist)? removeWatchlistById,
+    TResult Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
+    required TResult orElse(),
+  }) {
+    if (removeWatchlistById != null) {
+      return removeWatchlistById(idWatchlist);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_GetAllWatchlist value) getAllWatchlist,
+    required TResult Function(_ClearWatchlist value) clearWatchlist,
+    required TResult Function(_RemoveWatchlistById value) removeWatchlistById,
+    required TResult Function(_AddToWatchlist value) addToWatchlist,
+  }) {
+    return removeWatchlistById(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_GetAllWatchlist value)? getAllWatchlist,
+    TResult? Function(_ClearWatchlist value)? clearWatchlist,
+    TResult? Function(_RemoveWatchlistById value)? removeWatchlistById,
+    TResult? Function(_AddToWatchlist value)? addToWatchlist,
+  }) {
+    return removeWatchlistById?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_GetAllWatchlist value)? getAllWatchlist,
+    TResult Function(_ClearWatchlist value)? clearWatchlist,
+    TResult Function(_RemoveWatchlistById value)? removeWatchlistById,
+    TResult Function(_AddToWatchlist value)? addToWatchlist,
+    required TResult orElse(),
+  }) {
+    if (removeWatchlistById != null) {
+      return removeWatchlistById(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RemoveWatchlistById implements WatchlistEvent {
+  const factory _RemoveWatchlistById(final int idWatchlist) =
+      _$RemoveWatchlistByIdImpl;
+
+  int get idWatchlist;
+  @JsonKey(ignore: true)
+  _$$RemoveWatchlistByIdImplCopyWith<_$RemoveWatchlistByIdImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -501,6 +680,7 @@ class _$AddToWatchlistImpl implements _AddToWatchlist {
     required TResult Function() started,
     required TResult Function() getAllWatchlist,
     required TResult Function() clearWatchlist,
+    required TResult Function(int idWatchlist) removeWatchlistById,
     required TResult Function(WatchlistResponseModel resultWatchlist)
         addToWatchlist,
   }) {
@@ -513,6 +693,7 @@ class _$AddToWatchlistImpl implements _AddToWatchlist {
     TResult? Function()? started,
     TResult? Function()? getAllWatchlist,
     TResult? Function()? clearWatchlist,
+    TResult? Function(int idWatchlist)? removeWatchlistById,
     TResult? Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
   }) {
     return addToWatchlist?.call(resultWatchlist);
@@ -524,6 +705,7 @@ class _$AddToWatchlistImpl implements _AddToWatchlist {
     TResult Function()? started,
     TResult Function()? getAllWatchlist,
     TResult Function()? clearWatchlist,
+    TResult Function(int idWatchlist)? removeWatchlistById,
     TResult Function(WatchlistResponseModel resultWatchlist)? addToWatchlist,
     required TResult orElse(),
   }) {
@@ -539,6 +721,7 @@ class _$AddToWatchlistImpl implements _AddToWatchlist {
     required TResult Function(_Started value) started,
     required TResult Function(_GetAllWatchlist value) getAllWatchlist,
     required TResult Function(_ClearWatchlist value) clearWatchlist,
+    required TResult Function(_RemoveWatchlistById value) removeWatchlistById,
     required TResult Function(_AddToWatchlist value) addToWatchlist,
   }) {
     return addToWatchlist(this);
@@ -550,6 +733,7 @@ class _$AddToWatchlistImpl implements _AddToWatchlist {
     TResult? Function(_Started value)? started,
     TResult? Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult? Function(_ClearWatchlist value)? clearWatchlist,
+    TResult? Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult? Function(_AddToWatchlist value)? addToWatchlist,
   }) {
     return addToWatchlist?.call(this);
@@ -561,6 +745,7 @@ class _$AddToWatchlistImpl implements _AddToWatchlist {
     TResult Function(_Started value)? started,
     TResult Function(_GetAllWatchlist value)? getAllWatchlist,
     TResult Function(_ClearWatchlist value)? clearWatchlist,
+    TResult Function(_RemoveWatchlistById value)? removeWatchlistById,
     TResult Function(_AddToWatchlist value)? addToWatchlist,
     required TResult orElse(),
   }) {

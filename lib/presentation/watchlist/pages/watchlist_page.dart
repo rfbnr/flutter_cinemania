@@ -139,6 +139,18 @@ class _WatchListPageState extends State<WatchListPage> {
                         child: CircularProgressIndicator(),
                       );
                     },
+                    error: (message) {
+                      return Center(
+                        heightFactor: 5,
+                        child: Text(
+                          message,
+                          style: const TextStyle(
+                            color: AppColors.white,
+                            fontSize: 18,
+                          ),
+                        ),
+                      );
+                    },
                     success: (result) {
                       if (result.isEmpty) {
                         return const Center(

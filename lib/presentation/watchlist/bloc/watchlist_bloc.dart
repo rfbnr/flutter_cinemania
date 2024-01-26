@@ -29,7 +29,7 @@ class WatchlistBloc extends Bloc<WatchlistEvent, WatchlistState> {
 
           emit(_Success([watchlistData]));
         } catch (e) {
-          emit(const _Error("Gagal menambahkan ke daftar pantau"));
+          emit(const _Error("Gagal menambahkan ke watchlist"));
         }
       },
     );
@@ -49,6 +49,25 @@ class WatchlistBloc extends Bloc<WatchlistEvent, WatchlistState> {
       },
     );
 
+    on<_RemoveWatchlistById>(
+      (event, emit) async {
+        emit(const _Loading());
+
+        try {
+          await WatchlistLocalDatasource.instance
+              .removeWatchlistById(event.idWatchlist);
+
+          final watchlistData =
+              await WatchlistLocalDatasource.instance.getAllWatchlist();
+
+          emit(_Success(watchlistData));
+        } catch (e) {
+          emit(_Error(
+              "Gagal menghapus watchlist dengan id: ${event.idWatchlist}"));
+        }
+      },
+    );
+
     on<_ClearWatchlist>(
       (event, emit) async {
         emit(const _Loading());
@@ -58,7 +77,7 @@ class WatchlistBloc extends Bloc<WatchlistEvent, WatchlistState> {
 
           emit(const _Success([]));
         } catch (e) {
-          emit(const _Error("Gagal menghapus data watchlist"));
+          emit(const _Error("Gagal menghapus semua data watchlist"));
         }
       },
     );

@@ -1,10 +1,12 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/components/spaces.dart';
 import '../../../core/constants/colors.dart';
 import '../../../core/constants/variables.dart';
 import '../../../data/models/watchlist_response_model.dart';
+import '../bloc/watchlist_bloc.dart';
 
 class WatchlistCard extends StatelessWidget {
   const WatchlistCard({super.key, required this.data});
@@ -67,9 +69,29 @@ class WatchlistCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Icon(
-                        Icons.favorite,
-                        color: AppColors.red,
+                      GestureDetector(
+                        onTap: () {
+                          context
+                              .read<WatchlistBloc>()
+                              .add(WatchlistEvent.removeWatchlistById(data.id));
+
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                "Berhasil menghapus watchlist dengan id: ${data.id}",
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              backgroundColor: AppColors.green,
+                            ),
+                          );
+                        },
+                        child: const Icon(
+                          Icons.favorite,
+                          size: 26,
+                          color: AppColors.red,
+                        ),
                       ),
                     ],
                   ),
