@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/components/spaces.dart';
 import '../../../core/constants/colors.dart';
-import '../../../core/constants/vaiables.dart';
+import '../../../core/constants/variables.dart';
 import '../../../data/models/popular_people_response_model.dart';
 
 class PopularPeopleCard extends StatelessWidget {

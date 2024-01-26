@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 
-import '../../core/constants/vaiables.dart';
+import '../../core/constants/variables.dart';
 import '../models/popular_people_response_model.dart';
 
 class PeopleRemoteDatasource {

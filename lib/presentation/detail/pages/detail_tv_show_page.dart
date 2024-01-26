@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/constants/colors.dart';
-import '../../../core/constants/vaiables.dart';
+import '../../../core/constants/variables.dart';
 import '../../../data/models/tv_show_response_model.dart';
 import '../widgets/header_content_tv_show.dart';
 

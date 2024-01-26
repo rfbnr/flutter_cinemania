@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/components/spaces.dart';
 import '../../../core/constants/colors.dart';
-import '../../../core/constants/vaiables.dart';
+import '../../../core/constants/variables.dart';
 import '../../../data/models/watchlist_response_model.dart';
 
 class WatchlistCard extends StatelessWidget {
