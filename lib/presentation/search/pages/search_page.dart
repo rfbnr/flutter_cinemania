@@ -14,12 +14,19 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  final searchController = TextEditingController();
-  final indexValue = ValueNotifier(0);
+  final FocusNode _searchFocusNode = FocusNode();
+  final _searchController = TextEditingController();
+
+  void _onSubmitSearch(String search) {
+    context.read<SearchInputBloc>().add(SearchInputEvent.searchMovie(search));
+
+    _searchController.clear();
+    _searchFocusNode.unfocus();
+  }
 
   @override
   void dispose() {
-    searchController.dispose();
+    _searchController.dispose();
     super.dispose();
   }
 
@@ -36,7 +43,7 @@ class _SearchPageState extends State<SearchPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    "Search",
+                    "Search Movie",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: AppColors.white,
@@ -59,17 +66,10 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ),
             SearchInput(
-              controller: searchController,
-              onChanged: (value) {
-                indexValue.value = 0;
-              },
-              onPressed: () {
-                context
-                    .read<SearchInputBloc>()
-                    .add(SearchInputEvent.searchMovie(searchController.text));
-
-                searchController.clear();
-              },
+              controller: _searchController,
+              focusNode: _searchFocusNode,
+              onFieldSubmitted: (value) => _onSubmitSearch(value),
+              onPressed: () => _onSubmitSearch(_searchController.text),
             ),
             Container(
               margin: const EdgeInsets.only(top: 20, bottom: 50),
@@ -90,6 +90,18 @@ class _SearchPageState extends State<SearchPage> {
                     loading: () {
                       return const Center(
                         child: CircularProgressIndicator(),
+                      );
+                    },
+                    error: (message) {
+                      return Center(
+                        heightFactor: 5,
+                        child: Text(
+                          message,
+                          style: const TextStyle(
+                            color: AppColors.white,
+                            fontSize: 18,
+                          ),
+                        ),
                       );
                     },
                     success: (result) {
