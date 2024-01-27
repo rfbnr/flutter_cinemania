@@ -39,7 +39,11 @@ class PopularPeopleCard extends StatelessWidget {
                   placeholder: (context, url) => const Center(
                     child: CircularProgressIndicator(),
                   ),
-                  errorWidget: (context, url, error) => const Icon(Icons.error),
+                  errorWidget: (context, url, error) => const Icon(
+                    Icons.error,
+                    size: 80,
+                    color: AppColors.red,
+                  ),
                   fit: BoxFit.cover,
                 ),
               ),

@@ -61,14 +61,14 @@ class Result {
   String toJson() => json.encode(toMap());
 
   factory Result.fromMap(Map<String, dynamic> json) => Result(
-        adult: json["adult"],
-        gender: json["gender"],
-        id: json["id"],
-        knownForDepartment: json["known_for_department"],
-        name: json["name"],
-        originalName: json["original_name"],
-        popularity: json["popularity"]?.toDouble(),
-        profilePath: json["profile_path"],
+        adult: json["adult"] ?? true,
+        gender: json["gender"] ?? 0,
+        id: json["id"] ?? 0,
+        knownForDepartment: json["known_for_department"] ?? "Unknown",
+        name: json["name"] ?? "Unknown",
+        originalName: json["original_name"] ?? "Unknown",
+        popularity: json["popularity"]?.toDouble() ?? 0.0,
+        profilePath: json["profile_path"] ?? "Unknown",
       );
 
   Map<String, dynamic> toMap() => {

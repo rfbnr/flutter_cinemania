@@ -69,17 +69,20 @@ class Result {
   String toJson() => json.encode(toMap());
 
   factory Result.fromMap(Map<String, dynamic> json) => Result(
-        adult: json["adult"],
-        backdropPath: json["backdrop_path"] ?? "",
-        id: json["id"],
-        originalName: json["original_name"],
-        overview: json["overview"],
-        popularity: json["popularity"]?.toDouble(),
-        posterPath: json["poster_path"],
-        firstAirDate: DateTime.parse(json["first_air_date"]),
-        name: json["name"],
-        voteAverage: json["vote_average"]?.toDouble(),
-        voteCount: json["vote_count"],
+        adult: json["adult"] ?? false,
+        backdropPath: json["backdrop_path"] ?? "Unknown",
+        id: json["id"] ?? 0,
+        originalName: json["original_name"] ?? "Unknown",
+        overview: json["overview"] ?? "Unknown",
+        popularity: json["popularity"]?.toDouble() ?? 0.0,
+        posterPath: json["poster_path"] ?? "Unknown",
+        firstAirDate:
+            (json["first_air_date"] != null && json["first_air_date"] != "")
+                ? DateTime.parse(json["first_air_date"])
+                : DateTime.now(),
+        name: json["name"] ?? "Unknown",
+        voteAverage: json["vote_average"]?.toDouble() ?? 0.0,
+        voteCount: json["vote_count"] ?? 0,
         isWatchlist: json["is_watchlist"] ?? 0,
       );
 

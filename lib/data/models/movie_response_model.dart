@@ -72,17 +72,17 @@ class Result {
 
   factory Result.fromMap(Map<String, dynamic> json) => Result(
         adult: json["adult"] ?? false,
-        backdropPath: json["backdrop_path"] ?? "",
+        backdropPath: json["backdrop_path"] ?? "Unknown",
         id: json["id"] ?? 0,
-        originalTitle: json["original_title"] ?? "",
-        overview: json["overview"] ?? "",
+        originalTitle: json["original_title"] ?? "Unknown",
+        overview: json["overview"] ?? "Unknown",
         popularity: json["popularity"]?.toDouble() ?? 0.0,
-        posterPath: json["poster_path"] ?? "",
+        posterPath: json["poster_path"] ?? "Unknown",
         releaseDate:
             (json["release_date"] != null && json["release_date"] != "")
                 ? DateTime.parse(json["release_date"])
                 : DateTime.now(),
-        title: json["title"] ?? "",
+        title: json["title"] ?? "Unknown",
         video: json["video"] ?? false,
         voteAverage: json["vote_average"]?.toDouble() ?? 0.0,
         voteCount: json["vote_count"] ?? 0,
